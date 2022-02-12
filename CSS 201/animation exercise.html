@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            position: relative;
+            height: 700px;
+            width: 100%;
+
+        }
+
+        .ball {
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+            position: absolute;
+            border: 2px solid white;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+            animation: slide 5s linear infinite normal;
+            animation: name duration timing-function delay iteration-count direction fill-mode;
+            
+            
+        }
+
+
+        @keyframes slide {
+            0% {
+                top: 0;
+                left: 0;
+                background-color: red;
+            }
+            25% {
+                top: 0;
+                left: 85%;
+                background-color: yellow;
+            }
+            50% {
+                top: 80%;
+                left: 85%;
+                background-color: blue;
+            }
+            75% {
+                left: 0;
+                top: 80%;
+                background-color: violet;
+            }
+            to {
+                top: 0;
+                left: 0;
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+</body>
+</html>
