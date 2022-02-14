@@ -39,7 +39,7 @@ button {
   grid-template-columns: 45% auto auto auto auto max-content;
   text-align: start;
   padding: 5px;
-  margin: 50px 5px 50px 5px;
+  margin: 50px 0px;
 }
 
 #navTwo {
@@ -47,6 +47,7 @@ button {
   top: 0;
   background-color: inherit;
   background-color: rgba(5, 2, 56, 1);
+  padding: 20px 100px 50px 100px;
 }
 
 .item {
@@ -124,6 +125,10 @@ h1 sup {
 
 #belowFold {
   position: absolute;
+}
+
+#adventureSection {
+  width: 100%;
   padding: 100px;
   background: linear-gradient(
     180deg,
@@ -132,7 +137,7 @@ h1 sup {
   );
 }
 
-#belowFold h1 {
+#adventureSection h1 {
   font-weight: 300;
   font-size: 40px;
 }
@@ -147,14 +152,25 @@ hr {
   width: 100%;
   height: 200px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 30%;
   grid-template-rows: auto auto;
   padding: 5px;
   margin: 50px 5px 50px 5px;
 }
 
+#adventureCardHeader div {
+  border-top: 1px solid aliceblue;
+  text-align: end;
+}
+
+#adventureCardHeader div span {
+  color: #d3364b;
+}
+
 #adventureCards {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   padding: 10px;
   margin: 20px;
@@ -179,7 +195,8 @@ hr {
 
 #adventureCards img {
   max-height: 50%;
-  border-radius: 10px / 20px;
+  border-radius: 45px / 45px;
+  box-shadow: 0px 0px 5px rgb(63, 43, 179);
 }
 
 .card h1 {
@@ -199,48 +216,105 @@ hr {
   padding: 8px 30px 8px 30px;
 }
 
+#gallery {
+  padding: 100px;
+}
+
+#galleryHeader {
+  width: 100%;
+  height: 200px;
+  display: grid;
+  grid-template-columns: auto 30%;
+  grid-template-rows: auto auto;
+  padding: 5px;
+  margin: 50px 5px 50px 5px;
+}
+
+#galleryHeader div {
+  border-top: 1px solid aliceblue;
+  text-align: end;
+}
+
+#galleryHeader div span {
+  color: #d3364b;
+}
+
 #galleryBox {
   display: flex;
+  z-index: 0;
+  margin-top: 100px;
+}
+
+#box {
+  background-color: rgb(63, 43, 179);
+  width: 69%;
+  height: 24%;
+  position: absolute;
+  z-index: 1;
+  top: 69%;
+  left: 17%;
+  right: 0;
+  bottom: 100px;
+  margin: 100px;
 }
 
 #toGallery {
   display: inline-flex;
   color: aliceblue;
-  background-color: mediumslateblue;
+  background-color: rgb(63, 43, 179);
   border-left: 5px solid #d3364b;
   height: 70px;
   width: 150px;
+  z-index: 2;
 }
 
 #galleryBox img {
   max-width: 50%;
   object-fit: contain;
   align-self: flex-start;
+  z-index: 2;
+  box-shadow: 0px 0px 5px rgb(63, 43, 179);
 }
 
 #galleryBoxText {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  padding: 20px;
   max-width: 50%;
   align-self: flex-start;
+  z-index: 2;
 }
 
-#galleryBoxText h1 {
+#galleryBoxHeader {
+  display: grid;
+  background-color: mediumslateblue;
+  background-size: cover;
+  padding: 15px;
+}
+
+#galleryBoxHeader h1 {
   grid-column: 1;
   grid-row: 1;
+  font-size: 1.6em;
 }
 
-#galleryBoxText div {
+#galleryBoxHeader div {
   grid-column: 2;
   grid-row: 1;
-  text-align: center;
+  text-align: right;
+  align-self: start;
+}
+
+#galleryContent {
+  padding: 10px 40px;
 }
 
 #photographer {
+  color: #d3364b;
+  font-size: 1.2em;
   grid-column: 1;
   grid-row: 2;
+  margin: 5px 0px;
 }
 
 #desc1 {
@@ -249,8 +323,10 @@ hr {
 }
 
 #year {
+  font-size: 1.2em;
   grid-column: 1;
   grid-row: 4;
+  margin: 5px 0px;
 }
 
 #number {
@@ -259,11 +335,19 @@ hr {
 }
 
 #narrative {
+  font-size: 1.2em;
   grid-column: 1;
   grid-row: 6;
+  margin: 5px 0px;
 }
 
 #desc2 {
   grid-column: 1;
   grid-row: 7;
+}
+
+#expand {
+  grid-column: 1;
+  grid-row: 8;
+  max-width: 50%;
 }
