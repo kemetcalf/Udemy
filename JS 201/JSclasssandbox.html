@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Class Sandbox</title>
+</head>
+<body>
+    
+<script>
+
+    // class MyNameIs {
+    //     setName(name) {
+    //         this.name = name
+    //     }
+    //     intro() {
+    //         console.log(`Hello, my name is ${this.name}`)
+    //     }
+    // }
+
+    // const nameTag = new MyNameIs();
+    // nameTag.setName("What?");
+    // nameTag.intro();
+    // nameTag.setName("Who?");
+    // nameTag.intro();
+    // nameTag.setName("chicka chicka, Slim Shady");
+    // nameTag.intro();
+
+    class Hello {
+        constructor(name){
+            this.name = name
+        }
+
+        question() {
+            if (this.name === undefined) {
+            this.name = "me";
+            } 
+
+            console.log(`Hello, is it ${this.name} you're looking for?`)
+            
+        }
+    }
+
+    const intro = new Hello("Kat");
+    intro.question();
+
+
+</script>
+
+</body>
+</html>

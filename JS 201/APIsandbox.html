@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Sandbox</title>
+</head>
+<body>
+    
+    <script>
+        // fetch('https://api.polygon.io/v2/aggs/ticker/X:BTCUSD/range/1/day/2021-07-22/2021-07-22?apiKey=r2zrLaZxP4OCti55afLTp5NH4LcS8xuu')
+        fetch('https://swapi.dev/api/species/4/')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+    </script>
+
+</body>
+</html>

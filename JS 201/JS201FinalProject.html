@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 201 Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Dots&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Dela Gothic One', cursive;
+            color: lightyellow;
+            background-color: black;
+            text-align: center;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Zen Dots', cursive;
+            font-size: 20px;
+            letter-spacing: 3px;
+            color: yellow;
+            text-decoration: underline;
+            text-decoration-color: yellow;
+        }
+
+        h1 {
+            font-size: 60px;
+            text-shadow: 2px 2px 3px silver;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        h3 {
+            color: lightyellow;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        p {
+            font-size: x-large;
+            font-weight: lighter;
+        }
+
+        button {
+            font-size: larger;
+            font-family: 'Zen Dots', cursive;
+            color: yellow;
+            border-radius: 20% 20% 20% 20%;
+            padding: 20px;
+            box-shadow: 2px 2px 3px 0px silver;
+
+        }
+
+        li {
+            list-style-type: circle;
+            list-style-position: inside;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Star Wars Character Generator</h1>
+        <h2>Randomized Character Info</h2>
+    </header>
+
+    <!-- Submit button to trigger function for randomized generator-->
+    <button type="button" id="button">Click Me!</button>
+    
+    <!--Containers here with assigned info topics to be rewritten based on pulled data from the API -->
+    <section id="stats">
+        <h3 id="nameField">Character Name</h3>
+        
+        <h4>Home World:</h4>
+        <p id="homeworldField"></p>
+        
+        <h4>Species:</h4>
+        <p id="speciesField"></p>
+        
+        <h4>Film Appearances:</h4>
+        <ul id="filmList"></ul>
+    </section>
+
+    <script>
+        // Event listener for button; clears previous film list and calls new character info
+        let movieList = document.getElementById("filmList");
+
+        function clearList () {
+            while (movieList.hasChildNodes()) {
+                movieList.removeChild(movieList.firstChild);
+            }
+        }
+        
+        const clickMe = document.getElementById("button");
+
+        clickMe.addEventListener("click", clearList);
+        clickMe.addEventListener("click", characterCall);
+
+
+        function characterCall() {
+
+            // Random selector
+            const randomNumber = Math.ceil(Math.random() * 83);  
+
+            // fetch initial character info and url nested character info  
+            fetch(`https://swapi.dev/api/people/${randomNumber}/`) 
+                .then (response => response.json())
+                .then (data => {
+                    console.log(data) 
+
+                    document.getElementById("nameField").innerText = data.name;
+
+                    // Convert the url's provided for stats into nested fetch get requests
+
+                    // Fetching the homeworld info
+                    fetch(`${data.homeworld}`)
+                        .then (response => response.json())
+                        .then (homeworld => {
+                            document.getElementById("homeworldField").innerText = homeworld.name;
+                        })
+                    
+                    // Fetching the species info 
+                    if (data.species === undefined || data.species === null || data.species === "") {
+                        document.getElementById("speciesField").innerText = "unknown"
+                    } else if (Array.isArray(data.species) && data.species.length < 1){
+                        document.getElementById("speciesField").innerText = "unknown"
+                    } else {
+                        fetch(`${data.species}`)
+                            .then (response => response.json())
+                            .then (species => {
+                                document.getElementById("speciesField").innerText = species.name;
+                            })
+                        }
+                
+                    // Fetching the films info 
+
+                    for(let i = 0; i < data.films.length; i++) {
+                        fetch(`${data.films[i]}`)
+                        .then (response => response.json())
+                        .then (film => {
+                            let movie = document.createElement('li');
+                            let movieTitle = document.createTextNode(`${film.title}`);
+                            movie.appendChild(movieTitle);
+                            movieList.appendChild(movie);
+                        })
+                    }
+
+                })
+        }
+
+    </script>
+
+</body>
+</html>
