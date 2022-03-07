@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <script src="index.js"></script>
+    <title>Bootstrap 101 Project</title>
+</head>
+<body>
+    <header id="hero" class="text-light">
+
+        <nav class="navbar navbar-expand-lg">
+
+            <div class="container">
+
+                <a href="#" class="navbar-brand">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-exclude col" viewBox="0 0 16 16">
+                        <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm12 2H5a1 1 0 0 0-1 1v7h7a1 1 0 0 0 1-1V4z"/>
+                    </svg>
+                    BookFast
+                </a>
+
+                <button class="navbar-toggler link-light" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                          </svg>
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto p-4">
+                        <li class="nav-item">
+                            <a class="nav-link  link-light" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  link-light" href="#">Flights</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  link-light" href="#">Hotels</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  link-light" href="#">Tours</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  link-light" href="#">Dining</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active  link-light" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                </svg>    
+                            Sign Up
+                        </a>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary btn-sm">Sign In</button>
+                        </li>
+                        </ul>
+                </div>
+            </div>
+            <!-- logo, company, 5 options...sign in link, sign up button? -->
+        </nav>
+        <section class="p-5 m-5 text-center">
+            <div class="container p-5 my-5 mx-auto">
+                <div class="">
+                    <h1>Search for cheap airline tickets</h1>
+                    <p>Makes it easier to experience the world</p>
+                </div>    
+            </div>
+        </section>
+    </header>
+
+    <main class="page-wrapper">
+        <!-- from, to, depart, return, search button -->
+        <form class="container position-relative zindex-5" style="margin-top: -68px;" action="">
+            <div class="d-lg-flex align-items-center bg-secondary border rounded-3 px-4 pt-4 pb-3">
+                <div class="d-sm-flex align-items-center flex-grow-1">
+                    <div class=" mb-3 pb-1 w-100 mb-sm-4 me-sm-3">
+                        <label for="departing" class="form-label">From</label>
+                        <select name="departing" class="form-select" aria-placeholder="London, UK">
+                            <option value="1">Abu Dhabi, UAE</option>
+                            <option value="2">Amsterdam, NL</option>
+                            <option value="3">Berlin, GER</option>
+                            <option value="4">Rio de Janeiro, BR</option>
+                            <option value="5">London, UK</option>
+                            <option value="6">Madrid, SP</option>
+                        </select>
+                    </div>
+                    <div class=" mb-3 pb-1 w-100 mb-sm-4 me-sm-3">
+                        <label for="arriving" class="form-label">To</label>
+                        <select name="arriving" class="form-select" aria-placeholder="To where?">
+                            <option value="1">Abu Dhabi, UAE</option>
+                            <option value="2">Amsterdam, NL</option>
+                            <option value="3">Berlin, GER</option>
+                            <option value="4">Rio de Janeiro, BR</option>
+                            <option value="5">London, UK</option>
+                            <option value="6">Madrid, SP</option>
+                        </select>
+                    </div>
+                </div>    
+                <div class="d-sm-flex align-items-center flex-grow-1">
+                    <div class=" mb-3 pb-1 w-100 mb-sm-4 me-sm-3">
+                        <label for="departureDate" class="form-label">Depart</label>
+                        <div class="input-group flex">
+                            <input id="departureDate"  type="date" class="form-control date-picker date-range" placeholder="Choose date">
+                        </div>
+                    </div>
+                    <div class=" mb-3 pb-1 w-100 mb-sm-4 me-sm-3">
+                        <label for="arrivalDate" class="form-label">Arrive</label>
+                        <div class="input-group flex">
+                            <input id="arrivalDate" type="date" class="form-control date-picker date-range" placeholder="Choose date">
+                        </div>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary text-nowrap">Search Flights</button>
+                    </div>
+                </div>
+            </div>    
+        </form>
+        <!-- hot offers carousel w/counter -->
+        <section class="container py-5 my-5 my-sm-0 py-sm-3 py-md-4">
+            <h2 class="text-center mb-3">Hot Offers</h2>
+            <!-- actual carousel component -->
+            <div id="hotOffersCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner gy-3">
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="./assets/maldives.jpg" alt="..." class="d-block h-100 card-img-top rounded"></div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-dark pt-3"><strong>London to Maldives</strong></h5>
+                                <p class="card-text">March 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="./assets/riodejaniero.jpg" alt="" class="d-block h-100 card-img-top rounded"></div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-dark pt-3"><strong>London to Rio de Janeiro</strong></h5>
+                                <p class="card-text">April 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="./assets/colosseum.jpg" alt="" class="d-block h-100 card-img-top rounded"></div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-dark pt-3"><strong>London to Rome</strong></h5>
+                                <p class="card-text">May 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="./assets/burano.jpg  " alt="" class="d-block h-100 card-img-top rounded"></div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-dark pt-3"><strong>London to Burano</strong></h5>
+                                <p class="card-text">June 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="./assets/nycskyline.jpg" alt="" class="d-block h-100 card-img-top rounded"></div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-dark pt-3"><strong>London to New York</strong></h5>
+                                <p class="card-text">October 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" role="button" type="button" data-bs-slide="prev" data-bs-target="#hotOffersCarousel">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" role="button" type="button" data-bs-slide="next" data-bs-target="#hotOffersCarousel">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <!-- "what is around?" gradient banner -->
+        <section id="aroundBanner" class="d-flex align-items-center text-light py-5">
+            <div class="card-group justify-content-start">
+                <div class="card bg-transparent">
+                    <div class="card-body text-center">
+                        <div class="iconWrapper container d-flex justify-content-center rounded-circle bg-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-ticket-perforated flex-item align-self-center" viewBox="0 0 16 16">
+                                <path d="M4 4.85v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Z"/>
+                                <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3h-13ZM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9V4.5Z"/>
+                            </svg>
+                        </div>
+                        <p class="card-text pt-3  px-4">Make it easier to experience the world</p>
+                    </div>
+                </div>
+                <div class="card bg-transparent">
+                    <div class="card-body text-center">
+                        <div class="iconWrapper container d-flex justify-content-center rounded-circle bg-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-binoculars flex-item align-self-center" viewBox="0 0 16 16">
+                                <path d="M3 2.5A1.5 1.5 0 0 1 4.5 1h1A1.5 1.5 0 0 1 7 2.5V5h2V2.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5v2.382a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V14.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 14.5v-3a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5v3A1.5 1.5 0 0 1 5.5 16h-3A1.5 1.5 0 0 1 1 14.5V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V2.5zM4.5 2a.5.5 0 0 0-.5.5V3h2v-.5a.5.5 0 0 0-.5-.5h-1zM6 4H4v.882a1.5 1.5 0 0 1-.83 1.342l-.894.447A.5.5 0 0 0 2 7.118V13h4v-1.293l-.854-.853A.5.5 0 0 1 5 10.5v-1A1.5 1.5 0 0 1 6.5 8h3A1.5 1.5 0 0 1 11 9.5v1a.5.5 0 0 1-.146.354l-.854.853V13h4V7.118a.5.5 0 0 0-.276-.447l-.895-.447A1.5 1.5 0 0 1 12 4.882V4h-2v1.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V4zm4-1h2v-.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5V3zm4 11h-4v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14zm-8 0H2v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14z"/>
+                            </svg>
+                        </div>
+                        <p class="card-text pt-3 px-4">Advanced searching with filters</p>
+                    </div>
+                </div>
+                <div class="card bg-transparent">
+                    <div class="card-body text-center">
+                        <div class="iconWrapper container d-flex justify-content-center rounded-circle bg-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" class="flex-item align-self-center" width="60" height="60"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M484.6 62C502.6 52.8 522.6 48 542.8 48H600.2C627.2 48 645.9 74.95 636.4 100.2C618.2 148.9 582.1 188.9 535.6 212.2L262.8 348.6C258.3 350.8 253.4 352 248.4 352H110.7C101.4 352 92.5 347.9 86.42 340.8L13.34 255.6C6.562 247.7 9.019 235.5 18.33 230.8L50.49 214.8C59.05 210.5 69.06 210.2 77.8 214.1L135.1 239.1L234.6 189.7L87.64 95.2C77.21 88.49 78.05 72.98 89.14 67.43L135 44.48C150.1 36.52 169.5 35.55 186.1 41.8L381 114.9L484.6 62zM0 480C0 462.3 14.33 448 32 448H608C625.7 448 640 462.3 640 480C640 497.7 625.7 512 608 512H32C14.33 512 0 497.7 0 480z"/></svg>
+                        </div>
+                        <p class="card-text pt-3 px-4">Find the cheapest regular flights</p>
+                    </div>
+                </div>
+            </div>
+                <div class="card bg-transparent w-50 px-4">
+                    <div class="card-body text-start">
+                      <h3 class="card-title fs-2 fw-bolder">What is around?</h3>
+                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+                </div>
+        </section>
+        
+        <!-- FAQ accordion section -->
+        <section id="faqAccordion">
+            <div class="accordion g-3 rounded-3" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      How can I create a list of frequent destinations?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Cat ipsum dolor sit amet, donskoy and munchkin for american shorthair. Maine coon. Siamese leopard or leopard bobcat. Singapura puma abyssinian for turkish angora. Manx balinese panther yet turkish angora puma, egyptian mau for lynx. Turkish angora siberian grimalkin. American shorthair. Lynx munchkin for devonshire rex. British shorthair tabby tom and american bobtail. Havana brown ocicat. Tabby. Abyssinian manx ragdoll turkish angora kitten or balinese . Siberian munchkin so cougar or american shorthair and malkin norwegian forest cheetah. Cornish rex cougar for thai yet birman.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      What will happen after I sign up?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Cat ipsum dolor sit amet, donskoy and munchkin for american shorthair. Maine coon. Siamese leopard or leopard bobcat. Singapura puma abyssinian for turkish angora. Manx balinese panther yet turkish angora puma, egyptian mau for lynx. Turkish angora siberian grimalkin. American shorthair. Lynx munchkin for devonshire rex. British shorthair tabby tom and american bobtail. Havana brown ocicat. Tabby. Abyssinian manx ragdoll turkish angora kitten or balinese . Siberian munchkin so cougar or american shorthair and malkin norwegian forest cheetah. Cornish rex cougar for thai yet birman.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Do I have to confirm all bookings?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Cat ipsum dolor sit amet, donskoy and munchkin for american shorthair. Maine coon. Siamese leopard or leopard bobcat. Singapura puma abyssinian for turkish angora. Manx balinese panther yet turkish angora puma, egyptian mau for lynx. Turkish angora siberian grimalkin. American shorthair. Lynx munchkin for devonshire rex. British shorthair tabby tom and american bobtail. Havana brown ocicat. Tabby. Abyssinian manx ragdoll turkish angora kitten or balinese . Siberian munchkin so cougar or american shorthair and malkin norwegian forest cheetah. Cornish rex cougar for thai yet birman.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        What all is included?
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          Cat ipsum dolor sit amet, donskoy and munchkin for american shorthair. Maine coon. Siamese leopard or leopard bobcat. Singapura puma abyssinian for turkish angora. Manx balinese panther yet turkish angora puma, egyptian mau for lynx. Turkish angora siberian grimalkin. American shorthair. Lynx munchkin for devonshire rex. British shorthair tabby tom and american bobtail. Havana brown ocicat. Tabby. Abyssinian manx ragdoll turkish angora kitten or balinese . Siberian munchkin so cougar or american shorthair and malkin norwegian forest cheetah. Cornish rex cougar for thai yet birman.
+                      </div>
+                    </div>
+                  </div>
+              </div>
+        </section>
+        <!-- "make your trip..." img/text side by side -->
+
+        <!-- app ad section -->
+
+        <!-- newsletter/socials banner -->
+
+        <!-- footer -->
+    </main>
+
+    <div id="socials">
+        <!-- <i class="bi bi-facebook"></i> -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+        </svg>
+    
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+        </svg>
+    
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+        </svg>
+    
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+            <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+        </svg>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
