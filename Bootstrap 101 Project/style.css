@@ -65,10 +65,6 @@ header {
   background-repeat: no-repeat;
 }
 
-.carousel-inner {
-  padding: 1em;
-}
-
 .card {
   margin: 0 0.5em;
   border: none;
@@ -76,42 +72,48 @@ header {
 
 .carousel-control-prev,
 .carousel-control-next {
-  color: darkgrey;
-  background-color: var(--bs-body-bg);
+  background-color: transparent;
 }
 
-@media (min-width: 768px) {
-  .carousel-inner {
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
     display: flex;
   }
-  .carousel-item {
-    margin-right: 0;
-    flex: 0 0 34%;
-    display: block;
+  .carousel-inner .carousel-item > div:first-child {
+    display: flex;
   }
 }
 
-.card .img-wrapper {
-  height: 30em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* medium and up screens */
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(99%);
+  }
+
+  .carousel-inner .carousel-item-start.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-99%);
+  }
 }
+
+/* .carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+  transform: translateX(0.25);
+} */
+
 .card img {
   max-height: 100%;
-}
-@media (max-width: 767px) {
-  .card .img-wrapper {
-    height: 17em;
-  }
+  justify-content: center;
+  align-items: center;
 }
 
 #aroundBanner {
   background: rgb(112, 89, 161);
   background: linear-gradient(
     90deg,
-    rgba(112, 89, 161, 1) 0%,
-    rgba(105, 122, 224, 1) 59%,
+    #7059a1 0%,
+    #697ae0 59%,
     rgba(83, 145, 209, 1) 100%
   );
 }
@@ -119,4 +121,18 @@ header {
   color: rgb(112, 89, 161);
   width: 105px;
   height: 105px;
+}
+
+.accordion-button {
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.15);
+}
+
+#subscribe {
+  background: rgb(112, 89, 161);
+  background: linear-gradient(
+    90deg,
+    #7059a1 0%,
+    #697ae0 59%,
+    rgba(83, 145, 209, 1) 100%
+  );
 }
