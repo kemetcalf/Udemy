@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 101</title>
+
+    <style>
+        .box {
+            background-image: url("stefano-pollio-ZC0EbdLC8G0-unsplash.jpg");
+            background-size: contain;
+            width: 400px;
+            height: 400px;
+            background-repeat: no-repeat;
+            margin: 20px auto;
+        }
+
+        .pink{
+            background-color: hotpink;
+        }
+
+        .blue {
+            background-color: aqua;
+        }
+
+        .eatMe {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+
+</head>
+<body>
+    <div>first item</div>
+    <div>second item</div>
+    <div>third item</div>
+
+    <!-- <button id="show" >Show Me</button>
+    <button id="hide">Hide Me</button> -->
+    <!-- <button class="pinkBox">Make it pink!</button>
+    <button class="blueBox">Make it blue!</button>
+    <button class="growBox">Eat Me</button> -->
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script>
+        
+        $(document).ready(function() {
+            $("div").each(function(index, element) {
+                console.log($(element).text());
+                const originalText = $(element).text();
+                $(element).text(`${index + 1}. ${originalText}. fresher than before`);
+                if(index ===2) {
+                    $(element)
+                        .css("background-color", "black")
+                        .css("color", "white")
+                }
+                
+                })
+
+            // $(".pinkBox").on("click", () => {
+            //     $(".box").removeClass("blue");
+            //     $(".box").addClass("pink");
+            // })
+
+            // $(".blueBox").on("click", () => {
+            //     $(".box").removeClass("pink");
+            //     $(".box").addClass("blue");
+            // })
+
+            // $(".growBox").on("click", () => {
+            //     $(".box").toggleClass("eatMe");
+            // })
+
+            // $(".box").css({
+            //     border: "5px dotted limegreen"
+            // })
+
+            // $(".fadeBox").on("click", function() {
+            //     $(".box").fadeToggle(2000);
+            // })
+        })
+
+
+    </script>
+</body>
+</html>
