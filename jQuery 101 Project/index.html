@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 101 Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Dots&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Dela Gothic One', cursive;
+            color: lightyellow;
+            background-color: black;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        #stats {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            text-align: left;
+            margin: 40px;
+            margin-top: 60px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Zen Dots', cursive;
+            font-size: 20px;
+            letter-spacing: 3px;
+            color: yellow;
+            text-decoration: underline;
+            text-decoration-color: yellow;
+        }
+
+        h1 {
+            font-size: 50px;
+            text-shadow: 2px 2px 3px silver;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        h3 {
+            color: lightyellow;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+        p {
+            font-size: x-large;
+            font-weight: lighter;
+        }
+
+        button {
+            font-size: larger;
+            font-family: 'Zen Dots', cursive;
+            color: yellow;
+            border-radius: 20% 20% 20% 20%;
+            padding: 20px;
+            box-shadow: 2px 2px 3px 0px silver;
+
+        }
+
+        li {
+            list-style-type: circle;
+            list-style-position: inside;
+        }
+
+        #imgWrapper {
+            max-height: 400px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        #characterHeadshot {
+            max-height: 400px;
+            width: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Star Wars Character Generator</h1>
+        <h2>Randomized Character Info</h2>
+        <!-- Submit button to trigger function for randomized generator-->
+        <button type="button" id="button">Click Me!</button>
+    </header>
+
+    
+    <!--Containers here with assigned info topics to be rewritten based on pulled data from the API -->
+    <section id="stats">
+        <div id="dataColumn">
+            <h3 id="nameField">Character Name</h3>
+            
+            <h4>Home World:</h4>
+            <p id="homeworldField"></p>
+            
+            <h4>Species:</h4>
+            <p id="speciesField"></p>
+            
+            <h4>Professional Affiliations:</h4>
+            <ul id="affiliationList">
+
+            </ul>
+        </div>
+        <div id="imgWrapper">
+            <img id="characterHeadshot" src="" alt="character headshot">
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    
+    <script>
+        // Event listener for button; clears previous film list and calls new character info
+        
+        $(document).ready(function() {
+            $("button").on("click", function() {
+                $("#filmList").remove("li");
+                const randomNumber = Math.ceil(Math.random() * 88);  
+                $.get(`https://akabab.github.io/starwars-api/api/id/${randomNumber}.json`, function(data) {
+                    console.log(data)
+
+                    $("#nameField").text(data.name);
+                    $("#homeworldField").text(data.homeworld);
+                    $("#speciesField").text(data.species);
+
+                    const resume = (data.affiliations).length;
+                    for (let i=0; i < resume; i++) {
+                        $("#affiliationList").append("<li>" + data.affiliations[i] + "</li>");
+                    }
+                    console.log(data.image)
+                    $("#characterHeadshot").attr("src", data.image);
+                    })
+                });
+
+            })
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
