@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.btn {
+  background-color: black;
+  border: 1px solid yellow;
+  color: yellow;
+  padding: 20px;
+  font-size: 25px;
+}
+
+li {
+  text-align: start;
+}
+
+img {
+  max-height: 300px;
+  width: auto;
+}
