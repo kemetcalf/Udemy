@@ -18,3 +18,8 @@
 	background-position: center center;
 	opacity: 0.6;
 }
+
+#posterFormat {
+	height: 320px;
+	width: auto;
+}

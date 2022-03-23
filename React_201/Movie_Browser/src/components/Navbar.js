@@ -1,7 +1,5 @@
 import { useHistory, Link } from "react-router-dom";
 
-// TODO: MAKE SEARCH BUTTON FUNCTIONAL
-
 const Navbar = ({ searchText, setSearchText }) => {
 	const history = useHistory();
 
@@ -47,6 +45,7 @@ const Navbar = ({ searchText, setSearchText }) => {
 					</ul>
 					<form className="d-flex">
 						<input
+							id="searchField"
 							className="form-control me-2"
 							type="search"
 							placeholder="Search"
@@ -54,7 +53,14 @@ const Navbar = ({ searchText, setSearchText }) => {
 							value={searchText}
 							onChange={updateSearchText}
 						/>
-						<button className="btn btn-outline-success" type="submit">
+						<button
+							className="btn btn-outline-success"
+							onClick={(e) => {
+								e.preventDefault();
+								document.getElementById("searchField").value = "";
+							}}
+							type="submit"
+						>
 							Search
 						</button>
 					</form>

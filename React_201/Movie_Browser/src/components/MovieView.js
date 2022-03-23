@@ -23,7 +23,6 @@ const MovieView = () => {
 			return <Hero text="Loading..." />;
 		}
 		if (movieDetails) {
-			// TODO: handle a missing image path/GIVE A DEFAULT IMG
 			const posterPath = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
 			const backdropUrl = `https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`;
 			return (

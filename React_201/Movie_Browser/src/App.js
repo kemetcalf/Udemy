@@ -5,9 +5,8 @@ import Home from "./components/Home";
 import AboutView from "./components/AboutView";
 import SearchView from "./components/SearchView";
 import MovieView from "./components/MovieView";
+import PageNotFound from "./components/404View";
 import { Switch, Route } from "react-router-dom";
-
-// TODO: SET UP 404 PAGE
 
 function App() {
 	const [searchResults, setSearchResults] = useState([]);
@@ -35,6 +34,7 @@ function App() {
 					<SearchView keyword={searchText} searchResults={searchResults} />
 				</Route>
 				<Route path="/movies/:id" component={MovieView} />
+				<Route path="*" component={PageNotFound} />
 			</Switch>
 		</div>
 	);
